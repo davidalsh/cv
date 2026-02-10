@@ -1,5 +1,7 @@
 import type { CV } from "@/content/types";
 import HeroBackground from "./HeroBackground";
+import XLogo from "./XLogo";
+import CopyEmail from "./CopyEmail";
 
 export default function Hero({ basics }: { basics: CV["basics"] }) {
   return (
@@ -20,12 +22,10 @@ export default function Hero({ basics }: { basics: CV["basics"] }) {
         <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-neutral-500">
           {basics.location && <span>{basics.location}</span>}
           {basics.email && (
-            <a
-              href={`mailto:${basics.email}`}
+            <CopyEmail
+              email={basics.email}
               className="transition-colors hover:text-neutral-300"
-            >
-              {basics.email}
-            </a>
+            />
           )}
           {basics.links.map((link) => (
             <a
@@ -33,9 +33,13 @@ export default function Hero({ basics }: { basics: CV["basics"] }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-neutral-300"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-300"
             >
-              {link.label}
+              {link.label === "X" ? (
+                <XLogo className="h-3.5 w-3.5" />
+              ) : (
+                link.label
+              )}
             </a>
           ))}
         </div>

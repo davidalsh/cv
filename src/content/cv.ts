@@ -1,5 +1,9 @@
 import type { CV } from "./types";
 
+const birth = new Date(2005, 6, 31); // July 31, 2005
+const today = new Date();
+const age = today.getFullYear() - birth.getFullYear() - (today < new Date(today.getFullYear(), birth.getMonth(), birth.getDate()) ? 1 : 0);
+
 export const cv: CV = {
   basics: {
     name: "David Alsheuski",
@@ -8,9 +12,12 @@ export const cv: CV = {
     email: "software.dev.davidalsh@gmail.com",
     links: [
       { label: "GitHub", url: "https://github.com/davidalsh" },
+      { label: "X", url: "https://xdays.io/u/davidalsh" },
     ],
     summary:
-      "Experienced Software Engineer with years in application/service engineering, involved in system design, creating microservices, REST APIs and employing DevOps practices, with a strong love for problem-solving and challenging tasks.",
+      "Experienced Software Engineer with years in application/service engineering, involved in system design, creating microservices, business logic, APIs, employing DevOps practices and more. With a strong love for problem-solving.",
+    about:
+      `I'm ${age} and I've been building software for years. I enjoy designing systems, untangling complexity, and shipping clean solutions. Every day I try to beat who I was yesterday.`,
   },
   skills: [
     {
@@ -19,7 +26,7 @@ export const cv: CV = {
     },
     {
       group: "Backend",
-      items: ["Django", "Django REST Framework", "FastAPI", "SQLAlchemy"],
+      items: ["Django", "Django REST Framework", "FastAPI", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "MySQL", "MongoDB"],
     },
     {
       group: "Frontend",
@@ -27,16 +34,15 @@ export const cv: CV = {
     },
     {
       group: "AI / ML",
-      items: ["LLM", "RAG", "OpenAI", "Agents SDK"],
+      items: ["LLM", "RAG", "OpenAI", "Agents SDK", "LangChain", "LangGraph"],
     },
     {
-      group: "Databases",
-      items: ["PostgreSQL", "MySQL", "MongoDB"],
+      group: "AI Tools",
+      items: ["Claude Code", "Codex CLI"],
     },
     {
       group: "Cloud & DevOps",
       items: [
-        "AWS",
         "GCP",
         "DigitalOcean",
         "Docker",
@@ -49,10 +55,9 @@ export const cv: CV = {
       group: "Other",
       items: [
         "System Design",
-        "Unit Testing",
+        "Clean Architecture",
+        "Testing",
         "Data Structures & Algorithms",
-        "Supabase",
-        "Firebase",
       ],
     },
   ],
@@ -86,7 +91,7 @@ export const cv: CV = {
         "Django",
         "FastAPI",
         "CI/CD",
-        "Unit Testing",
+        "Testing",
       ],
     },
     {

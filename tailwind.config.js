@@ -19,6 +19,17 @@ export default {
           950: "#083344",
         },
       },
+      animation: {
+        float: "float 25s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0) translateX(0)" },
+          "25%": { transform: "translateY(-18px) translateX(8px)" },
+          "50%": { transform: "translateY(-6px) translateX(-10px)" },
+          "75%": { transform: "translateY(-22px) translateX(5px)" },
+        },
+      },
       fontFamily: {
         sans: [
           "Inter",

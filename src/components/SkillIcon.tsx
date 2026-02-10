@@ -23,6 +23,9 @@ import {
   SiApacheairflow,
   SiSupabase,
   SiFirebase,
+  SiLangchain,
+  SiAnthropic,
+  SiGithubactions,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -51,6 +54,12 @@ const iconMap: Record<string, IconType> = {
   "Apache Airflow": SiApacheairflow,
   Supabase: SiSupabase,
   Firebase: SiFirebase,
+  "Agents SDK": SiOpenai,
+  LangChain: SiLangchain,
+  LangGraph: SiLangchain,
+  "Claude Code": SiAnthropic,
+  "Codex CLI": SiOpenai,
+  "CI/CD": SiGithubactions,
 };
 
 export default function SkillIcon({ name }: { name: string }) {

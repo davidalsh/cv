@@ -23,9 +23,9 @@ export default function CursorGlow() {
 
   return (
     <div
-      className="pointer-events-none fixed z-[9999] h-[300px] w-[300px] rounded-full bg-neutral-500/5 blur-3xl transition-transform duration-150 ease-out print:hidden"
+      className="pointer-events-none fixed z-[9999] h-[180px] w-[180px] rounded-full bg-neutral-500/5 blur-3xl transition-transform duration-150 ease-out print:hidden"
       style={{
-        transform: `translate(${pos.x - 150}px, ${pos.y - 150}px)`,
+        transform: `translate(${pos.x - 90}px, ${pos.y - 90}px)`,
       }}
     />
   );

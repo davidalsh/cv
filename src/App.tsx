@@ -19,7 +19,7 @@ export default function App() {
       <Nav dark={dark} onToggleDark={toggle} />
       <main>
         <Hero basics={cv.basics} />
-        <About summary={cv.basics.summary} />
+        <About about={cv.basics.about} />
         <Skills skills={cv.skills} />
         <Experience experience={cv.experience} />
         <Education education={cv.education} />

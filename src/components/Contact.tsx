@@ -1,4 +1,6 @@
 import type { CV } from "@/content/types";
+import XLogo from "./XLogo";
+import CopyEmail from "./CopyEmail";
 
 export default function Contact({ basics }: { basics: CV["basics"] }) {
   return (
@@ -12,12 +14,10 @@ export default function Contact({ basics }: { basics: CV["basics"] }) {
         </p>
         <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
           {basics.email && (
-            <a
-              href={`mailto:${basics.email}`}
+            <CopyEmail
+              email={basics.email}
               className="text-neutral-300 transition-colors hover:text-accent-400"
-            >
-              {basics.email}
-            </a>
+            />
           )}
           {basics.phone && (
             <a
@@ -33,9 +33,13 @@ export default function Contact({ basics }: { basics: CV["basics"] }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-300 transition-colors hover:text-accent-400"
+              className="inline-flex items-center gap-1.5 text-neutral-300 transition-colors hover:text-accent-400"
             >
-              {link.label}
+              {link.label === "X" ? (
+                <XLogo className="h-3.5 w-3.5" />
+              ) : (
+                link.label
+              )}
             </a>
           ))}
         </div>

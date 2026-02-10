@@ -7,6 +7,7 @@ export type CV = {
     phone?: string;
     links: { label: string; url: string }[];
     summary?: string;
+    about?: string;
   };
   skills: { group: string; items: string[] }[];
   experience: {

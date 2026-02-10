@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
-const sections = [
+const allSections = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
@@ -17,6 +17,11 @@ export default function Nav({
   onToggleDark: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const [sections, setSections] = useState(allSections);
+
+  useEffect(() => {
+    setSections(allSections.filter((s) => document.getElementById(s.id)));
+  }, []);
 
   const handleClick = (id: string) => {
     setOpen(false);
