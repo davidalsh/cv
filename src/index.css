@@ -89,39 +89,9 @@ html {
   box-shadow: 0 0 12px rgba(6, 182, 212, 0.15);
 }
 
-/* Print styles */
+/* Disable printing */
 @media print {
-  * {
-    color: #000 !important;
-    background: #fff !important;
-    box-shadow: none !important;
-  }
-
-  html {
-    font-size: 11px;
-  }
-
-  nav,
-  .print\:hidden {
+  body {
     display: none !important;
-  }
-
-  section {
-    padding: 1rem 0 !important;
-    break-inside: avoid;
-  }
-
-  a {
-    text-decoration: none !important;
-  }
-
-  .min-h-screen {
-    min-height: auto !important;
-    padding-top: 0 !important;
-  }
-
-  .animate-bounce,
-  .animate-pulse {
-    animation: none !important;
   }
 }
