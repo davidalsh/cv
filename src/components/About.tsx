@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { SectionHeading } from "./SectionHeading";
 
 export default function About({ about }: { about?: string }) {
+  const [imgOk, setImgOk] = useState(true);
+
   if (!about) return null;
 
   return (
@@ -8,11 +11,14 @@ export default function About({ about }: { about?: string }) {
       <div className="mx-auto max-w-2xl">
         <SectionHeading>About</SectionHeading>
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
-          <img
-            src="/me.png"
-            alt="David Alsheuski"
-            className="h-28 w-28 shrink-0 rounded-2xl object-cover"
-          />
+          {imgOk && (
+            <img
+              src="/me.png"
+              alt="David Alsheuski"
+              className="h-28 w-28 shrink-0 rounded-2xl object-cover"
+              onError={() => setImgOk(false)}
+            />
+          )}
           <p className="text-2xl font-light leading-snug text-neutral-200 sm:text-3xl">
             {about}
           </p>
