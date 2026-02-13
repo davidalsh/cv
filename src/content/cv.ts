@@ -38,7 +38,7 @@ export const cv: CV = {
     },
     {
       group: "AI Tools",
-      items: ["Claude Code", "Codex CLI"],
+      items: ["Claude Code", "Codex CLI", "MCP"],
     },
     {
       group: "Cloud & DevOps",
