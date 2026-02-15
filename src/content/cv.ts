@@ -58,6 +58,7 @@ export const cv: CV = {
         "Clean Architecture",
         "Testing",
         "Data Structures & Algorithms",
+        "Vim",
       ],
     },
   ],

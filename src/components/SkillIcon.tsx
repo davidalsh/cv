@@ -26,6 +26,7 @@ import {
   SiLangchain,
   SiAnthropic,
   SiGithubactions,
+  SiVim,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -34,6 +35,7 @@ const iconMap: Record<string, IconType> = {
   TypeScript: SiTypescript,
   JavaScript: SiJavascript,
   Django: SiDjango,
+  "Django REST Framework": SiDjango,
   FastAPI: SiFastapi,
   SQLAlchemy: SiSqlalchemy,
   "React.js": SiReact,
@@ -60,6 +62,7 @@ const iconMap: Record<string, IconType> = {
   "Claude Code": SiAnthropic,
   "Codex CLI": SiOpenai,
   "CI/CD": SiGithubactions,
+  Vim: SiVim,
 };
 
 export default function SkillIcon({ name }: { name: string }) {
